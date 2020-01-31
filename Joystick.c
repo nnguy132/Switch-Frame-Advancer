@@ -94,6 +94,7 @@ void debounce_ports(void) {
 #define WAIT 4
 #define WAIT_PRESS 4
 #define SHINY_FRAME 3486
+#define END_OF_MONTH 30
 int frame = 1;
 int end_month = 0;
 
@@ -338,7 +339,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			}
 			if (count > 6)
 			{
-				if (end_month < 30) // accounts for end of month
+				if (end_month < END_OF_MONTH) // accounts for end of month
 				{
 					frame++; // update frame skip amount
 					end_month++;
